@@ -3,54 +3,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
+    <title>Advanced CSS - Assignment Animation</title>
     <style>
+        body{
+            background-color: #050210;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .circle ,.circle ::after, #outside { 
+            width: 400px;
+            height: 400px;
+            background: linear-gradient( #fb5dad , #55fb9f , #b97aff);
+            border-radius: 50%;
+            align-items: center;
+            position: relative;
+            animation: rotate 3s linear infinite;
+            z-index: 1;
+        }
+        .circle ::before {
+            content: "";
+            width: 340px;
+            height: 340px;
+            background-color: #050210;
+            border-radius: 50%;
+            position: absolute;
+            margin: 30px;
+            z-index: 2;
+            animation: pulse 3s linear infinite;
 
-        a[href^="https://www.google.com/"] {
-            color: green;
         }
-        a[target="_blank"] {
-            color: red;
+        .circle ::after{
+            content: "";
+            width: 400px;
+            height: 400px;
+            background: linear-gradient( #fb5dad , #55fb9f , #b97aff);
+            border-radius: 50%;
+            align-items: center;
+            filter: blur(60px);
+            display: block;
+            position: absolute;
+            z-index: -1;
         }
-       #second-div p:nth-child(odd) {
-                color: blue;
-        }
-        #second-div p:nth-child(even) {
-                color: red;
-        }
-        #first-div > p:after   {
-            content: " - NEW";
-            color: yellow;
-        }
-        p:nth-child(8):hover {
-            font-style: italic;
+        #inside > .circle {
+            content: "";
+            width: 340px;
+            height: 340px;
+            background-color: #050210;
+            border-radius: 50%;
+            position: fixed;
+            margin: 30px;
+            z-index: -1;
+
         }
 
+        
 
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0)
+            }
+        
+        
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        
     </style>
 </head>
 
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/" title="google">Google</a>
-    <a href="https://www.google.com/doodles" title="google doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank" >Goto Link Group</a>
-    <div id="first-div" >
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
-        </div>
+    <div class="circle">
+        <div id="inside"></div>
+        <div id="outside"></div>
     </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
+
 </body>
 
 </html>
