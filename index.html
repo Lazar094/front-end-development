@@ -1,89 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment Animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assigment - Kreiranje responsive galerije</title>
     <style>
-        body{
-            background-color: #050210;
+        body {
+            font-family: sans-serif;
+            width: 900px;
+            margin: 10px auto;
             display: flex;
+            flex-direction: column;
+        }
+        .grid {
+            display: grid;
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            justify-content: space-between;
+            align-items: center;
+        }
+        header {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 15px;
             justify-content: center;
-            align-items: center;
-            height: 90vh;
         }
-        .circle  { 
-            width: 400px;
-            height: 400px;
-            background: linear-gradient( #fb5dad , #55fb9f , #b97aff);
-            border-radius: 50%;
-            align-items: center;
-            position: absolute;
-            animation: rotate 3s linear infinite;
-        }
-        .circle::before {
-            content: "";
-            width: 400px;
-            height: 400px;
-            background: linear-gradient( #fb5dad , #55fb9f , #b97aff);
-            border-radius: 50%;
-            align-items: center;
-            filter: blur(30px);
-            position: absolute;
+        #box {
+            height: 90px;
+            width: 110px;
+            border-radius: 8px;
+            background-color: rgb(107, 165, 236) 
+            
 
         }
-        .circle::after{
-            content: "";
-            width: 400px;
-            height: 400px;
-            background-color: #050210;
-            border-radius: 50%;
-            transform: scale(0.8);
-            position: absolute;
+        #box {
+            content: "Title Image";
+            background-image: url("placeholder-image.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 120%;
+
 
         }
-        #inside {
-            width: 400px;
-            height: 400px;
-            background-color: #2a292cb5;
-            border-radius: 50%;
-            position: absolute;
-            transform: scale(0.2);
-            animation: pulse 2s linear infinite;
-            z-index: 2;
-
-        }
-
-        
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
+        #box1{
+            margin-top: 70px;
+            height: 20px;
+            color: rgba(0, 0, 0, 0.759);
+            background-color: rgba(255, 255, 255, 0.878);
+            text-align: center;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
             }
-            to {
-                transform: rotate(360deg);
+        .flexbox {
+            display: flex;
+            flex-flow: wrap;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+                
+        @media screen and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(5,1fr);
+                justify-content: center;
             }
         }
-        @keyframes pulse {
-            0% {
-                transform: scale(0)
-            }
-        
-        
-            100% {
-                transform: scale(0.8);
+        @media screen and (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3,1fr);
+                justify-content: center;
             }
         }
-        
-        
-    </style>
+        @media screen and (max-width: 414px) {
+            .grid {
+                grid-template-columns: repeat(1,1fr);
+                justify-content: center;
+            }
+            }
+            
+        </style>
 </head>
-
 <body>
-    <div class="circle">
-        <div id="inside"></div>
+    <div class="flexbox">
+    <header>Gallery Heading</header>
+    <div class="grid">
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
+        <div id="box">
+            <div id="box1"><p>Image Title</p></div>
+        </div>
     </div>
-
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nostrum corrupti commodi amet beatae hic. Numquam autem earum, maiores dolorem praesentium facilis expedita adipisci placeat cupiditate similique inventore, deserunt qui! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed a facere alias eligendi vero, nemo reprehenderit dolore earum hic. Nisi porro officia earum ipsam odit placeat eum totam quibusdam eveniet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos molestias autem nemo doloremque fugit accusantium culpa ab, sequi sapiente laudantium. Nostrum ullam voluptas inventore magni, aperiam doloremque molestias minus corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nisi, exercitationem atque debitis, odio ad animi accusamus officia non sunt tempore! Rem debitis quis ullam quod excepturi in sint. Sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste commodi quia, nostrum magnam sit sapiente dignissimos nam tempora fuga nemo modi veniam esse eius cum, atque suscipit quas odio cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo rem nisi optio id veritatis culpa. Culpa et perspiciatis modi alias, recusandae omnis sunt facere mollitia nemo voluptatem reiciendis nobis? Dolorem.</p>
+</div>
+    
 </body>
-
 </html>
