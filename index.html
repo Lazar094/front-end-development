@@ -7,15 +7,15 @@
     <style>
         body {
             font-family: sans-serif;
-            width: 900px;
+            max-width: 900px;
             margin: 10px auto;
             display: flex;
             flex-direction: column;
         }
         .grid {
             display: grid;
+            width: 900px;
             height: 300px;
-            display: grid;
             grid-template-columns: repeat(5,1fr);
             justify-content: space-between;
             align-items: center;
@@ -32,21 +32,16 @@
             justify-content: center;
         }
         #box {
-            height: 90px;
-            width: 110px;
-            border-radius: 8px;
-            background-color: rgb(107, 165, 236) 
-            
-
-        }
-        #box {
             content: "Title Image";
             background-image: url("placeholder-image.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 120%;
-
-
+            margin: auto;
+            height: 90px;
+            width: 110px;
+            border-radius: 8px;
+            background-color: rgb(107, 165, 236) 
         }
         #box1{
             margin-top: 70px;
@@ -62,27 +57,46 @@
             flex-flow: wrap;
             flex-direction: column;
             box-sizing: border-box;
+            margin: auto;
         }
 
                 
         @media screen and (max-width: 1024px) {
             .grid {
                 grid-template-columns: repeat(5,1fr);
-                justify-content: center;
+                height: 300px;
             }
         }
         @media screen and (max-width: 768px) {
             .grid {
                 grid-template-columns: repeat(3,1fr);
-                justify-content: center;
+                height: 500px;
+                width: 668px;
             }
         }
         @media screen and (max-width: 414px) {
             .grid {
                 grid-template-columns: repeat(1,1fr);
-                justify-content: center;
+                height: 1100px;
+                width: 300px;
             }
             }
+            @media screen and (max-width: 1024px) {
+            .flexbox {
+                width: 900px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .flexbox {
+              width: 600px;
+            }
+        }
+        @media screen and (max-width: 414px) {
+            .flexbox {
+                width: 300px;
+            }
+            }
+            
             
         </style>
 </head>
